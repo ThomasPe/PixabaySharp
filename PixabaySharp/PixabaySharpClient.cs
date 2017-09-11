@@ -22,5 +22,11 @@ namespace PixabaySharp
             var s = HttpUtility.UrlEncode(search);
             return await _httpHelper.GetRequest<Result>($"&q={s}").ConfigureAwait(false);
         }
+
+        public async Task<Result> QueryImages(ImageQueryBuilder qb)
+        {
+            var s = qb.ToString();
+            return await _httpHelper.GetRequest<Result>($"{s}").ConfigureAwait(false);
+        }
     }
 }
