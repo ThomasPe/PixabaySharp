@@ -1,8 +1,16 @@
 # PixabaySharp
-This is an unofficial C# / .NET API Wrapper
+This is an unofficial C# / .NET API Wrapper written for .NET Standard 1.2.
+
+## Compatible with
+- .NET Core 
+- .NET Framework 4.5+
+- Mono 4.6
+- Xamarin
+- Universal Windows Platform (UWP)
+- Windows 8+
+- Windows Phone 8.1
 
 # Getting Started
-
 
 **Getting API Credentials**
 
