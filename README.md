@@ -4,16 +4,16 @@ This is an unofficial C# / .NET API Wrapper
 # Getting Started
 
 
-**Get API Credentials**
+**Getting API Credentials**
 
 - Create a free [Pixabay Account](https://pixabay.com/en/accounts/register/)
 - Find your API key here: https://pixabay.com/api/docs/#api_key
 
-**Install PixabaySharp from NuGet**
+**Installing PixabaySharp from NuGet**
 
 - `Install-Package PixabaySharp`
 
-**Use the PixabaySharp client**
+**Using the PixabaySharp client**
 
 ```csharp
 var client = new PixabaySharpClient("apikey");
