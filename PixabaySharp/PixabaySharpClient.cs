@@ -1,10 +1,7 @@
 ﻿using PixabaySharp.Models;
 using PixabaySharp.Utility;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace PixabaySharp
 {
@@ -19,7 +16,7 @@ namespace PixabaySharp
 
         public async Task<Result> Search(string search)
         {
-            var s = HttpUtility.UrlEncode(search);
+            var s = HttpTools.UriEncode(search);
             return await _httpHelper.GetRequest<Result>($"&q={s}").ConfigureAwait(false);
         }
 

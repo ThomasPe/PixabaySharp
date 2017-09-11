@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
-using System.Web;
 
 namespace PixabaySharp.Utility
 {
@@ -30,7 +28,7 @@ namespace PixabaySharp.Utility
 
             if (!String.IsNullOrEmpty(Query))
             {
-                sb.Append($"&q={HttpUtility.UrlEncode(Query)}");
+                sb.Append($"&q={HttpTools.UriEncode(Query)}");
             }
             if (Language != null)
             {

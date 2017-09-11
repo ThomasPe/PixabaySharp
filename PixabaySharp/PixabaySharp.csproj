@@ -1,7 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard1.2</TargetFramework>
+    <Authors>Thomas Pentenrieder</Authors>
+    <Company>medienstudio.net</Company>
+    <Description>An unofficial .NET API wrapper for Pixabay.com</Description>
+    <PackageProjectUrl>https://github.com/ThomasPe/PixabaySharp</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/ThomasPe/PixabaySharp/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>© Thomas Pentenrieder | 2017</Copyright>
+    <RepositoryUrl>https://github.com/ThomasPe/PixabaySharp</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>pixabay images stock free</PackageTags>
+    <PackageReleaseNotes>Initial release, supporting image queries</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
