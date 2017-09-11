@@ -13,6 +13,7 @@
     <PackageTags>pixabay images stock free</PackageTags>
     <PackageReleaseNotes>Initial release, supporting image queries</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
