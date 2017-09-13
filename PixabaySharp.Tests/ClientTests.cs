@@ -12,7 +12,7 @@ namespace PixabaySharp.Tests
         public async Task BasicTest()
         {
             var client = new PixabaySharpClient(Utility.ApiCredentials.ApiKey);
-            var images = await client.Search("dog");
+            var images = await client.SearchAsync("dog");
             Assert.IsNotNull(images);
         }
 
@@ -20,7 +20,7 @@ namespace PixabaySharp.Tests
         public async Task QueryImagesTest()
         {
             var client = new PixabaySharpClient(Utility.ApiCredentials.ApiKey);
-            var result = await client.QueryImages(new ImageQueryBuilder()
+            var result = await client.QueryImagesAsync(new ImageQueryBuilder()
             {
                 Query = "Dog",
                 PerPage = 5
