@@ -1,10 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PixabaySharp.Utility
@@ -20,7 +18,7 @@ namespace PixabaySharp.Utility
             _apiKey = apiKey;
         }
 
-        internal async Task<TClass> GetRequest<TClass>(string query)
+        internal async Task<TClass> GetRequestAsync<TClass>(string query)
             where TClass : class
         {
             HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.ExpectationFailed);
