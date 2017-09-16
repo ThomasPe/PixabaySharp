@@ -1,46 +1,43 @@
-﻿using System;
+﻿using PixabaySharp.Enums;
+using System;
 using System.Text;
 
 namespace PixabaySharp.Utility
 {
-    public class ImageQueryBuilder
+    /// <summary>
+    /// Class to generate a query for images.
+    /// </summary>
+    public class ImageQueryBuilder : BaseQueryBuilder
     {
-        public string Query { get; set; }
-        public Lang? Language { get; set; }
-        public string Id { get; set; }
+        /// <summary>
+        /// Choose between retrieving high resolution images and image details.
+        /// </summary>
         public ResponseGroup? ResponseGroup { get; set; }
+
+        /// <summary>
+        /// Filter results by image type. 
+        /// </summary>
         public ImageType? ImageType{ get; set; }
+
+        /// <summary>
+        /// Whether an image is wider than it is tall, or taller than it is wide. 
+        /// </summary>
         public Orientation? Orientation { get; set; }
-        public Category? Category { get; set; }
-        public int? MinWidth { get; set; }
-        public int? MinHeight { get; set; }
-        public bool? IsEditorsChoice { get; set; }
-        public bool? IsSafeSearch { get; set; }
-        public Order? Order { get; set; }
-        public int? Page { get; set; }
-        public int? PerPage { get; set; }
 
 
+        /// <summary>
+        /// Create url query string.
+        /// </summary>
+        /// <returns>query string</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
-            // Build query string
+            var baseQuery = base.ToString();
 
-            if (!String.IsNullOrEmpty(Query))
+            var sb = new StringBuilder(baseQuery);
+
+            if (ResponseGroup != null)
             {
-                sb.Append($"&q={HttpTools.UriEncode(Query)}");
-            }
-            if (Language != null)
-            {
-                sb.Append($"&lang={Language.ToString().ToLower()}");
-            }
-            if (!String.IsNullOrEmpty(Id))
-            {
-                sb.Append($"&id={Id}");
-            }
-            if(ResponseGroup != null)
-            {
-                if(ResponseGroup == Utility.ResponseGroup.HighResolution)
+                if(ResponseGroup == Enums.ResponseGroup.HighResolution)
                     sb.Append($"&response_group=high_resolution");
                 else
                     sb.Append($"&response_group=image_details");
@@ -53,73 +50,8 @@ namespace PixabaySharp.Utility
             {
                 sb.Append($"&orientation={Orientation.ToString().ToLower()}");
             }
-            if (Category != null)
-            {
-                sb.Append($"&category={Category.ToString().ToLower()}");
-            }
-            if(MinWidth != null && MinWidth != 0)
-            {
-                sb.Append($"&min_width={MinWidth.ToString().ToLower()}");
-            }
-            if (MinHeight != null && MinHeight != 0)
-            {
-                sb.Append($"&min_height={MinHeight.ToString().ToLower()}");
-            }
-            if(IsEditorsChoice != null)
-            {
-                sb.Append($"&editors_choice={IsEditorsChoice.ToString().ToLower()}");
-            }
-            if(IsSafeSearch != null)
-            {
-                sb.Append($"&safesearch={IsSafeSearch.ToString().ToLower()}");
-            }
-            if (Order != null)
-            {
-                sb.Append($"&order={Order.ToString().ToLower()}");
-            }
-            if (Page != null)
-            {
-                sb.Append($"&page={Page}");
-            }
-            if (PerPage != null)
-            {
-                sb.Append($"&per_page={PerPage}");
-            }
 
             return sb.ToString();
         }
-    }
-
-    
-
-
-    public enum Lang
-    {
-        CS, DA, DE, EN, ES, FR, ID, IT, HU, NL, NO, PL, PT, RO, SK, FI, SV, TR, VI, TH, BG, RU, EL, JA, KO, ZH
-    }
-
-    public enum ResponseGroup
-    {
-        ImageDetails, HighResolution
-    }
-
-    public enum ImageType
-    {
-        All, Photo, Illustration, Vector 
-    }
-
-    public enum Orientation
-    {
-        All, Horizontal, Vertical 
-    }
-
-    public enum Category
-    {
-        Fashion, Nature, Backgrounds, Science, Education, People, Feelings, Religion, Health, Places, Animals, Industry, Food, Computer, Sports, Transportation, Travel, Buildings, Business, Music
-    }
-
-    public enum Order
-    {
-        Popular, Latest
     }
 }
