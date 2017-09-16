@@ -27,7 +27,7 @@ namespace PixabaySharp.Tests
             });
             Assert.AreEqual(result.Images.Count, 5);
 
-            result = await client.QueryImages(new ImageQueryBuilder()
+            result = await client.QueryImagesAsync(new ImageQueryBuilder()
             {
                 Query = "Dog",
                 PerPage = 15

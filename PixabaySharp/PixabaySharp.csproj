@@ -11,9 +11,11 @@
     <RepositoryUrl>https://github.com/ThomasPe/PixabaySharp</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>pixabay images stock free</PackageTags>
-    <PackageReleaseNotes>Initial release, supporting image queries</PackageReleaseNotes>
+    <PackageReleaseNotes>1.0.0 Initial release, supporting image queries
+1.0.1 Method-naming update</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
