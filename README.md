@@ -26,11 +26,22 @@ This is an unofficial C# / .NET API Wrapper written for .NET Standard 1.2.
 ```csharp
 var client = new PixabaySharpClient("apikey");
 
-// simple search example
-var result = await client.Search("dog");
+// simple image search example
+var result = await client.SearchImagesAsync("dog");
 
-// more complex API queries
-var result = await client.QueryImages(new ImageQueryBuilder()
+// simple video search example
+var result = await client.SearchVideosAsync("dog");
+
+// more complex API queries for images
+var result = await client.QueryImagesAsync(new ImageQueryBuilder()
+{
+    Query = "Dog",
+    Page = 2,
+    PerPage = 5
+});
+
+// more complex API queries for videos
+var result = await client.QueryVideosAsync(new VideoQueryBuilder()
 {
     Query = "Dog",
     Page = 2,
